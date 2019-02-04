@@ -1,5 +1,5 @@
 ## Slides for JSLeague's "Intro to Vue.js" Workshop
----
+
 To view the slides, first install dependencies - the `serve` package:
 ```sh
 yarn install
