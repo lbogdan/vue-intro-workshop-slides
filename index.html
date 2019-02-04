@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta
+      name="description"
+      content="A framework for easily creating beautiful presentations using HTML"
+    />
+    <meta name="author" content="Hakim El Hattab" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link
+      href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,600,700&subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic"
+      rel="stylesheet"
+      type="text/css"
+      data-application-font="opensans"
+    />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css" /> -->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/atom-one-dark.min.css"
+    />
+
+    <!--[if lt IE 9]> <script src="lib/js/html5shiv.js"></script> <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section
+          data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/841906/images/5646146/Screen_Shot_2019-01-05_at_1.59.35_PM.png"
+          class="title"
+        >
+          <!-- <img
+            src="https://www.jsleague.ro/images/logo/logo-flat.png"
+            alt="JSLeague Logo"
+            style="position: absolute; left: 0; width: 100px;"
+          /> -->
+          <a
+            href="https://jsleague.ro/"
+            target="_blank"
+            style="position: static;"
+          >
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-slim-white.png"
+              class="logo"
+              alt="JSLeague Logo"
+              style="width: 150px;"
+            />
+          </a>
+          <h2 style="margin-top:100px;">JSLeague Proudly Presents</h2>
+          <img
+            src="https://vuejs.org/images/logo.png"
+            alt="Vue.js Logo"
+            class="simple"
+            style="width: 200px;"
+          />
+          <h2>Intro to Vue.js Workshop <sup style="font-size: 0.5em;">beta</sup></h2>
+          <p
+            style="align-self: flex-start; position: relative; top: 50px; text-align: left;"
+          >
+            26th-27th Jan 2019<br />DOvelopers Office
+          </p>
+        </section>
+
+        <section data-background-color="#faea97">
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>About Me, About You</h2>
+          <ul>
+            <li>
+              sysadmin, networking, backend, frontend, ...
+            </li>
+            <li class="fragment">
+              Dev&Ops @<a href="https://codesandbox.io/" target="_blank"
+                >CodeSandbox.io</a
+              >
+              — "The online code editor for Web"
+            </li>
+            <li class="fragment">driven by curiosity</li>
+            <li class="fragment">"Don't be afraid, it's just code!"</li>
+            <li class="fragment">
+              24/7 support on
+              <a href="https://chat.vuejs.org/" target="_blank"
+                >Vue.js Official Chat</a
+              >
+              — BogdanL :-)
+            </li>
+          </ul>
+        </section>
+
+        <section data-background-color="#faea97">
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Agenda</h2>
+          <ul>
+            <li>Short Intro</li>
+            <li>25 Challenges</li>
+            <ul>
+              <li>Slides introducing the concepts</li>
+              <li>I complete the challenge</li>
+              <li>You complete the challenge</li>
+            </ul>
+            <li>Day 1: Vue</li>
+            <li>Day 2: vue-router & vuex</li>
+            <li>10-15m break every hour</li>
+            <li>1h lunch break</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <a
+            href="https://overreacted.io/the-elements-of-ui-engineering/"
+            target="_blank"
+            >Dan Abramov: The Elements of UI Engineering</a
+          >
+          <h2 class="fragment">Frontend Development IS HARD!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Sources Of Complexity</h2>
+          <ul class="fragment">
+            <li>"Code against the platform"</li>
+            <li>state management — syncing the UI to the state</li>
+            <li class="fragment">
+              <span style="font-size: 75%"
+                >responsiveness, internationalization, accessibility, network
+                latency / bandwidth, computing power, testing, maintainability,
+                ...
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Solution: Frontend Libraries / Frameworks</h2>
+          <ul>
+            <li>jQuery & co.</li>
+            <li class="fragment">Knockout, Ember.js</li>
+            <li class="fragment">"The Big Three" — Angular, React, Vue.js</li>
+            <li class="fragment">lots others</li>
+            <li class="fragment">"less code, more magic"</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Enter Vue.js</h2>
+          <h3>
+            <a
+              href="https://vuejs.org/"
+              target="_blank"
+              style="position: static;"
+            >
+              "The Progressive Javascript Framework"</a
+            >
+          </h3>
+          <img
+            src="https://sites.google.com/site/webdevelopart/_/rsrc/1511099898084/22-script/javascript/vue-js/Progressive%20framework.png"
+            alt="Vue.js Progressive Framework"
+            class="simple fragment"
+            style="width: 700px;"
+          />
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Vue.js Building Blocks</h2>
+          <ul>
+            <li>Declarative mindset</li>
+            <li>Components</li>
+            <li><span class="muted">implicit</span> Reactivity</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>SFCs: Single File Components</h2>
+          <ul>
+            <li><strong>.vue</strong> file extension</li>
+            <li><strong>&lt;template&gt;</strong> - "just" HTML</li>
+            <li><strong>&lt;script&gt;</strong> - just JavaScript</li>
+            <li>
+              <strong>&lt;style <span class="muted">scoped</span>&gt;</strong> -
+              just CSS
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Single File Components (cont.)</h2>
+          <pre><code data-trim class="html">
+            <template>
+                <div class="greeting">Hello, {{ framework }}!</div>
+            </template>
+              
+            &lt;script&gt;
+            export default {    // component definition object
+              name: 'greeting', // component name
+              data() {
+                return {        // component state
+                  framework: 'Vue.js',
+                };
+              },
+            };
+            &lt;/script&gt;
+
+            <style>
+            .greeting {
+              color: #42b983;
+            }
+            </style>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>SFCs: Template</h2>
+          <ul>
+            <li>HTML with <i>v-</i> directives and custom elements</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div>
+                <button v-on:click="increment">+</button>
+                <span>{{ counter }}</span>
+                <button v-on:click="decrement">-</button>
+                <input v-model="counter">
+                <custom-component :value="counter"></custom-component>
+              </div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>must have a <strong>single root</strong> element!</li>
+            <li>
+              expressions are evaluated in the component instance context (no
+              <strong>this.counter</strong>!)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>SFCs: Script</h2>
+          <ul>
+            <li>component definition object</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <!-- Component.vue -->
+            &lt;script&gt;
+            export default {
+              name: 'simple-component',     // component name
+              components: { /*...*/ },      // components used in &lt;template&gt;
+              data: function() { /*...*/ }, // internal state
+              props: { /*...*/ },           // external state
+              computed: { /*...*/ },        // derived state
+              methods: { /*...*/ },
+              watch: { /*...*/ },
+            };
+            &lt;/script&gt;
+          </code></pre>
+          <ul>
+            <li>
+              when Vue renders a component, it uses the definition object to
+              create a component instance (with a different structure)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>What We're Building</h2>
+          <ul>
+            <li><a href="https://codesandbox.io/s/github/lbogdan/vue-intro-workshop-api" target="_blank">API</a></li>
+            <li><a href="https://codesandbox.io/s/github/lbogdan/vue-intro-workshop" target="_blank"</a>Movie Library App</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 0-1!</h2>
+          <h3><a href="https://github.com/lbogdan/vue-intro-workshop/blob/master/docs/challenges.md" target="_blank">Challenges link</a></h3>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>
+            <span class="muted">Internal</span> Component State:
+            <strong>data()</strong>
+          </h2>
+          <ul>
+            <li>must be <strong>a function</strong> that returns an object</li>
+          </ul>
+          <pre><code data-trim class="js">
+            export default {
+              data() { // ES6 shorthand for data: function() {
+                return {
+                  name: 'Vue',
+                  lang: 'js',
+                  logo: 'https://vuejs.org/images/logo.png',
+                  counter: 0,
+                };
+              },
+            };
+          </code></pre>
+          <ul>
+            <li>accessible in the template as <strong>name</strong></li>
+            <li>accessible in the script as <strong>this.name</strong></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>
+            Interpolation: <strong>{{&nbsp;}}</strong>
+          </h2>
+          <ul>
+            <li>syntax: <strong>{{ <i>expression</i> }}</strong></li>
+            <li><i>expression</i> can be any valid JavaScript expression</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div>Welcome to {{ name }}.{{ lang }}!</div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>result:</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <div>Welcome to Vue.js!</div>
+          </code></pre>
+          <ul>
+            <li>works <strong>only inside text nodes</strong> <strike>&lt;img src="{{ imageUrl }}"&gt;</strike></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>
+            <span class="muted">One-way</span> Property Binding:
+            <strong>v-bind</strong>
+          </h2>
+          <ul>
+            <li>syntax: <strong>v-bind:<i>property</i>="<i>expression</i>"</strong></li>
+            <li>
+              <span class="muted">shorthand</span> :<strong><i>property</i>="<i>expression</strong></i>"
+            </li>
+            <li><i>property</i> is an HTML attribute or a component prop</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div><img :src="logo" alt="Logo" /></div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>result:</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <div><img src="https://vuejs.org/images/logo.png" alt="Logo" /></div>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenge 2!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Using Components: Importing & Registering</h2>
+          <pre><code data-trim class="html">
+            <!-- App.vue - parent -->
+            &lt;script&gt;
+            import HelloWorld from './components/HelloWorld.vue';
+            
+            export default {
+              components: {
+                HelloWorld, // - child, short for HelloWorld: HelloWorld
+              },
+            };
+            &lt;/script&gt;
+          </code></pre>
+          <ul>
+            <li>use as <strong>&lt;hello-world&gt;</strong> or <strong>&lt;HelloWorld&gt;</strong> in the template</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 4-5!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2><span class="muted">Two-way</span> Property Binding: <strong>v-model</strong> on DOM elements</h2>
+          <ul>
+            <li>syntax: <strong>v-model="<i>variable</i>"</strong></li>
+            <li><i>variable</i> is a property of state (can go deeper, e.g. <strong>user.name</strong>)
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div><input type="text" v-model="name" /></div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>works a bit different, depending on which DOM element is applied:
+              <strong>&lt;input&gt;</strong>, <strong>&lt;textarea&gt;</strong>, <strong>&lt;select&gt;</strong> etc., see
+              <a href="https://vuejs.org/v2/guide/forms.html" target="_blank">docs</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Methods</h2>
+          <pre><code data-trim class="html">
+            <template>
+              <button @click="greet">Say Hello!</button>
+            </template>
+            
+            &lt;script&gt;
+            export default {
+              methods: {
+                greet() {
+                  alert('Hello, ' + this.name + '');
+                },
+              },
+            };
+            &lt;/script&gt;
+          </code></pre>
+          <ul>
+            <li>inside the method <strong>this</strong> is auto-bound to component instance</li>
+            <li>accessible in template as <strong>greet()</strong> (or just <strong>greet</strong> for event handlers)</li>
+            <li>accessible in script as <strong>this.greet()</strong></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2><span class="muted">DOM</span> Event Handling: <strong>v-on</strong> <span class="muted">on DOM elements</span></h2>
+          <ul>
+            <li>syntax: <strong>v-on:<i>event</i>="<i>handler"</i></strong></li>
+            <li>shorthand: <strong>@<i>event</i>="<i>handler"</i></strong></li>
+            <li><i>event</i> is the DOM event name (e.g. <strong>click</strong>)</li>
+            <li><i>handler</i> is a method name defined in <strong>methods</strong></li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div><button @click="greet">Say Hello!</button></div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>the event handler is called with the DOM event as an argument</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Event Handling: <strong>v-on</strong> (cont.)</h2>
+          <ul>
+            <li>alternate syntax: <strong>@<i>event</i>="<i>statement</i>"</strong></li>
+            <li><i>statement</i> can be any valid JavaScript statement</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div><button @click="counter = counter + 1">Increment</button></div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>only use simple statements!</li>
+            <li>modifiers: <strong>@submit.prevent="save"</strong>: prevent, once</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 5-6!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Style Binding</h2>
+          <ul>
+            <li>syntax: <strong>:style="<i>object_expression</i>"</strong></li>
+            <li><i>object_expression</i> is a JS expression that evaluates to an object</li>
+            <li>object properties are CSS properties (can be both camelCase and kebab-case)</li>
+            <li>object values are CSS values</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div :style="{ color: 'orangered', fontWeight: 'bold' }">
+                Orange, bold text
+              </div>
+            </template>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenge 7!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2><span class="muted">Derived</span> Component State: <strong>computed</strong></h2>
+          <ul>
+            <li>a state property that only depends on other state properties</li>
+          </ul>
+          <pre><code data-trim class="js">
+            export default {
+              computed: {
+                fullName() {
+                  return this.name + '.' + this.lang;
+                },
+              },
+            };
+          </code></pre>
+          <ul>
+            <li>accessible in template as <strong>fullName</strong> (without <strong>()</strong>!)</li>
+            <li>accessible in script as <strong>this.fullName</strong> (same as <strong>data</strong>)</li>
+            <li>rule of thumb: if it's internal state, but it can't be modified, it's a computed</li>
+            <li>cached!</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenge 8!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Class Binding</h2>
+          <ul>
+            <li>syntax: <strong>:class="<i>array_expression</i>"</strong></li>
+            <li><i>array_expression</i> is a JS expression that evaluates to an array of class names, which will be applied on the element</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div :class="[isError ? 'text-danger' : 'text-success', 'info']">
+                {{ message }}
+              </div>
+            </template>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Class Binding (alt.)</h2>
+          <ul>
+            <li>alternate syntax: <strong>:class="<i>object_expression</i>"</strong></li>
+            <li>object properties are class names</li>
+            <li>object values are booleans, if <strong>true</strong> the class is applied, if <strong>false</strong> the class is not applied</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div :class="{ 'text-danger': isError, 'text-success': !isError, info: true }">
+                {{ message }}
+              </div>
+            </template>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 9-10!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2><span class="muted">External</span> Component State: <strong>props</strong></h2>
+          <ul>
+            <li>define in child component:</li>
+          </ul>
+          <pre><code data-trim class="js">
+            // MovieItem.vue
+            export default {
+              name: 'movie-item',
+              props: {
+                item: {
+                  type: Object,
+                  required: true,
+                },
+              },
+            };
+          </code></pre>
+          <ul>
+            <li>accessible in template as <strong>item</strong></li>
+            <li>accessible in script as <strong>this.item</strong> (same as data and computed)</li>
+            <li><strong>can't be changed!</strong></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Component State: <strong>props</strong></h2>
+          <ul>
+            <li>send from parent component:</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <!-- ParentComponent.vue -->
+            <template>
+              <!-- bind child "item" prop to "movie" state -->
+              <movie-item :item="movie"></movie-item>
+            </template>
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Child → Parent Communication: component events</h2>
+          <ul>
+            <li>define <strong>change</strong> (arbitrary name) event handler in parent:</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <!-- ParentComponent -->
+            <template>
+              <child-component @change="save"></child-component>
+            </template>
+            
+            &lt;script&gt;
+            export default {
+              name: 'parent-component',
+              methods: {
+                save(payload) { // this is the payload sent from $emit()
+                  // do stuff with payload
+                }
+              }
+            }
+            &lt;/script&gt;
+          </code></pre>
+          <ul>
+            <li>event names are case-sensitive!</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Child → Parent Communication: component events (cont.)</h2>
+          <ul>
+            <li>send <strong>change</strong> event from child to the parent</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <!-- ChildComponent -->
+            <template>
+              <button @click="sendChange">Save</button>
+            </template>
+            
+            &lt;script&gt;
+            export default {
+              name: 'child-component',
+              methods: {
+                sendChange() {
+                  // send "change" event with "counter + 1" payload
+                  this.$emit('change', counter + 1);
+                }
+              }
+            }
+            &lt;/script&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 11-12!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Conditional Rendering: <strong>v-if & v-else-if & v-else</strong></h2>
+          <ul>
+            <li>syntax: <strong>v-if="<i>boolean_expression</i>"</strong>, <strong>v-else-if="<i>boolean_expression</i>"</strong>, <strong>v-else</strong></li>
+            <li>if <strong>true</strong>, render component, if <strong>false</strong>, don't render component</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <loading-indicator v-if="isLoading" />
+              <div v-else-if="movies.length === 0">No movies found</div>
+              <div v-else>{{ movies.length }} found</div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>if you only want to hide the component, but still render it, use <strong>v-show</strong></li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Rendering HTML: <strong>v-html</strong></h2>
+          <ul>
+            <li>syntax: <strong>v-html="<i>string_expression</i>"</strong></li>
+            <li>used when we want to output HTML — interpolation escapes the output</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div v-html="getHtml()"></div>
+            </template>
+
+            &lt;script&gt;
+            export default {
+              methods: {
+                getHtml() {
+                  return 'some <strong>HTML</strong> here';
+                },
+              },
+            };
+            &lt;/script&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenges 13-15!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2><span class="muted">Two-way</span> Property Binding: <strong>v-model</strong> on components</h2>
+          <ul>
+            <li>syntax: <strong>&lt;custom-input v-model="<i>variable</i>"&gt;</strong></li>
+            <li>eqivalent to <strong>:value="<i>variable</i>" @input="<i>variable</i> = $event"</i></strong></li>
+            <li><strong>$event</strong> is a special Vue property that holds the event payload</li>
+            <li><i>variable</i> is a property of state</li>
+            <li>the child component must accept a <strong>value</strong> prop and can emit <strong>input</strong> events with the new value</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Reacting to state changes: <strong>watchers</strong></h2>
+          <pre><code data-trim class="js">
+            export default {
+              watch: {
+                name(value, oldValue) { // called when this.name changes
+                  console.log(`name changed from ${oldValue} to ${value}`);
+                },
+              },
+            };
+          </code></pre>
+          <ul>
+            <li>if we need to watch more than one level, we can use deep watchers</li>
+          </ul>
+        </section>
+  
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenge 16!</h2>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>List Rendering: <strong>v-for</strong></h2>
+          <ul>
+            <li>syntax: <strong>v-for="item in <i>array_expression</i>" :key="<i>value</i>"</strong></li>
+            <li><i>value</i> must be a <strong>unique</strong> value for each element</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div>
+                <ul>
+                  <li v-for="item in movies" :key="item.id">{{ item.title }}</li>
+                </ul>
+              </div>
+            </template>
+
+            &lt;script&gt;
+            export default {
+              data() {
+                return {
+                  movies: [{ id: 1, title: 'Saw' }, { id: 2, title: 'Saw II' }],
+                };
+              },
+            };
+            &lt;/script&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>List Rendering: <strong>v-for</strong> (alt.)</h2>
+          <ul>
+            <li>alternate syntax: <strong>v-for="(item, index) in <i>array_expression</i>" :key="<i>value</i>"</strong></li>
+            <li><i>index</i> is 0-based</li>
+          </ul>
+          <pre><code data-trim class="html">
+            <template>
+              <div>
+                <ul>
+                  <li v-for="item in movies" :key="item.id">{{ item.title }}</li>
+                </ul>
+              </div>
+            </template>
+          </code></pre>
+          <ul>
+            <li>also works with <i>object_expression</i>, see docs :-)</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="slide-logo">
+            <img
+              src="https://www.jsleague.ro/images/logo/logo-flat.png"
+              alt="JSLeague Logo"
+            />
+            <div>Intro to Vue.js</div>
+          </div>
+          <h2>Challenge 17!</h2>
+        </section>
+
+        <section>
+            <div class="slide-logo">
+              <img
+                src="https://www.jsleague.ro/images/logo/logo-flat.png"
+                alt="JSLeague Logo"
+              />
+              <div>Intro to Vue.js</div>
+            </div>
+            <h2>Component <a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank">Life-cycle</a> Hooks (not that kind of hooks! :-) )</h2>
+            <ul>
+              <li>called during component life-cycle</li>
+              <li>most used ones:</li>
+              <ul>
+                <li><strong>created()</strong> - called after the instance is initialized, but before render</li>
+                <li><strong>mounted()</strong> - called after rendering and attaching to DOM</li>
+                <li><strong>beforeDestroy()</strong> - called before destroying the instance, do cleanup tasks here (e.g. delete timers)</li>
+              </ul>
+              </ul>
+              <pre><code data-trim class="js">
+              export default {
+                created() {
+                  console.log('instance created!');
+                },
+              };
+            </code></pre>
+            <ul>
+              <li>are <strong>synchronous</strong> (Vue doesn't wait for them to "finish")</li>
+            </ul>
+          </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          {
+            src: 'lib/js/classList.js',
+            condition: function() {
+              return !document.body.classList;
+            },
+          },
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+        ],
+
+        width: '100%',
+        height: '100%',
+        center: false,
+        zoomLevel: 1.5,
+      });
+
+      window.addEventListener("mousedown", handleClick, false);
+      window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+      function handleClick(e) {
+        if (e.target.tagName !== 'A') {
+          e.preventDefault();
+          if(e.button === 0) Reveal.prev();
+          if(e.button === 2) Reveal.next();
+        }
+      }
+    </script>
+  </body>
+</html>

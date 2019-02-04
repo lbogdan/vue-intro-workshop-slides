@@ -1,0 +1,12 @@
+{
+  "name": "vue-intro-workshop-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve"
+  },
+  "devDependencies": {
+    "serve": "^10.1.1"
+  }
+}
